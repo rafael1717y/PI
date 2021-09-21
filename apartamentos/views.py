@@ -6,3 +6,6 @@ from django.shortcuts import render
 def index(request):
     #return HttpResponse('<h1>Apartamentos</h1>')
     return render(request, 'index.html')
+
+def apartamento(request):
+    return render(request, 'apartamento.html')

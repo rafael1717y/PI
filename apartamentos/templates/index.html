@@ -24,10 +24,10 @@
 </head>
 
 <body>
-    <!-- Preloader -->
+    <!-- Preloader ## todo2-->
     <div id="preloader">
         <i class="circle-preloader"></i>
-        <img src="img/core-img/pizza.png" alt="">
+        <img src="{%static 'img/core-img/pizza.png' %}" alt="">
     </div>
 
     <!-- Search Wrapper -->
@@ -47,7 +47,7 @@
         </div>
     </div>
 
-    <!-- ##### Header Area Start ##### -->
+    <!-- ##### Header Area Start  ##### -->
     <header class="header-area">
 
         <!-- Top Header Area -->
@@ -85,8 +85,9 @@
                     <!-- Menu -->
                     <nav class="classy-navbar justify-content-between" id="deliciousNav">
 
-                        <!-- Logo -->
-                        <a class="nav-brand" href="index.html"><img src="{% static 'img/core-img/logo.png' %}" alt=""></a>
+                        <!-- Logo ## todo1 - alterar-->
+                        <a class="nav-brand" href="{% url 'index' %}">
+                            <img src="{% static 'img/core-img/logo.png' %}" alt=""></a> 
 
                         <!-- Navbar Toggler -->
                         <div class="classy-navbar-toggler">
@@ -104,8 +105,8 @@
                             <!-- Nav Start -->
                             <div class="classynav">
                                 <ul>
-                                    <li><a href="index.html">Home</a></li>
-                                    <li><a href="receita.html">APARTAMENTOS</a></li>
+                                    <li><a href="{% url 'index' %}">Home</a></li>
+                                    <li><a href="{% url 'apartamento' %}">APARTAMENTOS</a></li>
                                 </ul>
 
                                 <!-- Formulario de busca -->
@@ -133,7 +134,7 @@
                     <div class="single-best-receipe-area mb-30">
                         <img src="{% static 'img/bg-img/foto_receita.png' %}" alt="">
                         <div class="receipe-content">
-                            <a href="receita.html">
+                            <a href="{% url 'apartamento' %}">
                                 <h5>APARTAMENTO 100</h5>
                             </a>
                         </div>
@@ -145,7 +146,7 @@
                     <div class="single-best-receipe-area mb-30">
                         <img src="{% static 'img/bg-img/foto_receita.png' %}" alt="">
                         <div class="receipe-content">
-                            <a href="receita.html">
+                            <a href="{% url 'apartamento' %}">
                                 <h5>APARTAMENTO 200</h5>
                             </a>
                         </div>
@@ -157,7 +158,7 @@
                     <div class="single-best-receipe-area mb-30">
                         <img src="{% static 'img/bg-img/foto_receita.png' %}" alt="">
                         <div class="receipe-content">
-                            <a href="receita.html">
+                            <a href="{% url 'apartamento' %}">
                                 <h5>APARTAMENTO 300</h5>
                             </a>
                         </div>
@@ -183,7 +184,7 @@
                     </div>
                     <!-- Footer Logo -->
                     <div class="footer-logo">
-                        <a href="index.html"><img src="img/core-img/logo.png" alt=""></a>
+                        <a href="{% url 'index' %}"><img src="{% static 'img/core-img/logo.png' %}" alt=""></a>
                     </div>
                 </div>
             </div>
@@ -207,4 +208,3 @@
 </html>
 
 
-"""
