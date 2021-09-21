@@ -55,7 +55,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="receipe-slider owl-carousel">
-                            <img src="{% static 'img/bg-img/tomate_banner.jpg' %}">
+                            <img src="{% static 'img/bg-img/apto.jpg' %}">
                     </div>
                 </div>
             </div>
@@ -68,13 +68,15 @@
                 <div class="row">
                     <div class="col-12 col-md-8">
                         <div class="receipe-headline my-5">
-                            <span>30 de Fevereiro, 2000</span>
-                            <h2>Apartamento</h2>
+                            <span>{{  apartamento.data_criacao }}</span>
+                            <h2>{{apartamento.nome_apartamento}}</h2>
                             <div class="receipe-duration">
-                                <h6>Descrição: 15 minutos</h6>  <!-- preparo--> 
-                                <h6>Dado 1: 2 porçoes</h6> <!-- rendimento-->
-                                <h6>Dado 2: categoria</h6> <!-- categoria:categoria -->
-                                <h6>Dado3: Pessoa</h6> <!-- por: pessoa -->
+                                <h6>Descrição do imóvel: {{ apartamento.descricao_apartamento }}</h6>  <!-- preparo--> 
+                                <h6>Valor aluguel {{apartamento.valor_aluguel}}</h6>
+                                <h6>Valor venda {{apartamento.venda}}</h6>
+                                <h6>Email do Proprietário: {{apartamento.email_proprietario }}</h6> <!-- rendimento-->
+                                <h6>Fone do Proprietário: {{ apartamento.fone_proprietario }} </h6> <!-- categoria:categoria -->
+                                
                             </div>
                         </div>
                     </div>
@@ -90,7 +92,7 @@
                     <!-- Ingredientes -->
                     <div class="col-12 col-lg-4">
                         <div class="ingredients">
-                            <h4>Ingredientees</h4>
+                            <h4>Informações Adicionais</h4>
                             <div class="ingredients">
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec varius dui. Suspendisse potenti. Vestibulum ac pellentesque tortor. Aenean congue sed metus in iaculis. Cras a tortor enim. Phasellus posuere vestibulum ipsum, eget lobortis purus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
                             </p>
