@@ -3,9 +3,21 @@ from django.shortcuts import render
 
 # Create your views here.
 
-def index(request):
-    #return HttpResponse('<h1>Apartamentos</h1>')
-    return render(request, 'index.html')
+def index(request):    
+    apartamentos = {
+        1: 'Apartamento do João',
+        2: 'Apartamento da Maria',
+        3: 'Apartamento do José',
+        4: 'Apartamento da Si'
+    }
+
+    dados = {
+        'nome_dos_apartamentos': apartamentos
+    }
+
+    return render(request, 'index.html', dados)
+
 
 def apartamento(request):
     return render(request, 'apartamento.html')
+
