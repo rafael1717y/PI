@@ -81,7 +81,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql', #postgresql
         'NAME': 'pi_apartamentos',
         'USER': 'postgres',
-        'PASSWORD': '',
+        'PASSWORD': 'rafa21',
         'HOST': 'localhost'
     }
 }

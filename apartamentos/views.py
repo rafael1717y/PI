@@ -16,9 +16,24 @@ def index(request):
 
 def apartamento(request, apartamento_id):
     apartamento = get_object_or_404(Apartamento, pk=apartamento_id)  #primary key
+    
     apartamento_a_exibir = {
         'apartamento' : apartamento
     }
     return render(request, 'apartamento.html', apartamento_a_exibir)
 
+
+def buscar(request):
+    lista_apartamentos = Apartamento.objects.order_by('-data_criacao').filter(apartamento_publicado = True)
+    if 'buscar' in request.GET:
+        ### ou categoria a buscar ??
+        nome_a_buscar = request.GET['buscar']   
+        if buscar:
+            lista_apartamentos = lista_apartamentos.filter(nome_apartamento__icontains=nome_a_buscar)
+
+    dados = {
+        'apartamentos' : lista_apartamentos
+    }
+
+    return render(request, 'buscar.html', dados)
 

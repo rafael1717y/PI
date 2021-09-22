@@ -21,6 +21,8 @@ class Apartamento(models.Model):
     apartamento_publicado = models.BooleanField(default=False)
     # inclusão de um imagem para cada apto
     foto_apartamento = models.ImageField(upload_to = 'fotos/%d/%m/%Y/', blank=True)
+    def __str__(self):
+        return self.nome_apartamento
 
 
 
