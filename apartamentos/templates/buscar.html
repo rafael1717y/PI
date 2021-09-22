@@ -5,15 +5,13 @@
 <!-- Preloader ## todo2-->
     <div id="preloader">
         <i class="circle-preloader"></i>
-        <!--<img src="{%static 'img/core-img/pizza.png' %}" alt=""> -->
+        <img src="{%static 'img/core-img/pizza.png' %}" alt="">
     </div>
 
     <br>
     <br>
     <br>
-    
     {% include 'partials/_busca.html' %}
-    
     {% include 'partials/_menu.html' %}
     
     <!-- ##### Best Receipe Area Start ##### -->
@@ -39,6 +37,9 @@
                 </div>
                 {% endfor %}
                 {% else %}
+                
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <p> Apartamento não encontrado</p>
                 {% endif %}
             </div>
         </div>

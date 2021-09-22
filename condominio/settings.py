@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'apartamentos',
+    'pessoas',
 ]
 
 MIDDLEWARE = [
@@ -80,7 +81,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql', #postgresql
         'NAME': 'pi_apartamentos',
         'USER': 'postgres',
-        'PASSWORD': '',
+        'PASSWORD': 'rafa21',
         'HOST': 'localhost'
     }
 }
@@ -134,3 +135,7 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Configuração para uso dos arquivos de media
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'

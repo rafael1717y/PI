@@ -6,27 +6,11 @@
     <!-- Preloader -->
     <div id="preloader">
         <i class="circle-preloader"></i>
-        <img src="{% static 'img/core-img/hamburger.png' %}" alt="">
+        <!-- <img src="{% static 'img/core-img/hamburger.png' %}" alt=""--> 
     </div>
 
-    <!-- Search Wrapper -->
-    <div class="search-wrapper">
-        <!-- Close Btn -->
-        <div class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></div>
-
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <form action="#" method="post">
-                        <input type="search" name="search" placeholder="O que está procurando...">
-                        <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-{% include 'partials/menu.html' %}
+    {% include 'partials/_busca.html' %}
+    {% include 'partials/_menu.html' %}
 
         <!-- Receipe Post Search -->
         <div class="receipe-post-search mb-80">
@@ -55,7 +39,11 @@
             <div class="row">
                 <div class="col-12">
                     <div class="receipe-slider owl-carousel">
-                            <img src="{% static 'img/bg-img/apto.jpg' %}">
+                        {% if apartamento.foto_apartamento == '' %}
+                            <img src="{% static 'img/bg-img/imagem1.jpg' %}"> 
+                        {% else %}
+                            <img src= "{{ apartamento.foto_apartamento.url }}" alt = "">
+                        {% endif %}
                     </div>
                 </div>
             </div>
@@ -76,7 +64,7 @@
                                 <h6>Valor venda {{apartamento.venda}}</h6>
                                 <h6>Email do Proprietário: {{apartamento.email_proprietario }}</h6> <!-- rendimento-->
                                 <h6>Fone do Proprietário: {{ apartamento.fone_proprietario }} </h6> <!-- categoria:categoria -->
-                                
+                                <h6>Imóvel cadastrado por: {{ apartamento.pessoa }}</h6>
                             </div>
                         </div>
                     </div>
@@ -102,5 +90,5 @@
                 </div>
                 <!-- Ingredientes -->
 
-    {% include 'partials/footer.html' %}
+    {% include 'partials/_footer.html' %}
 {% endblock %}
