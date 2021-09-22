@@ -5,7 +5,8 @@ from .models import Apartamento
 # Create your views here.
 
 def index(request):    
-    apartamentos = Apartamento.objects.all()
+    # filtro para editar os apartamentos antes de publicá-los e ordenando pelos aptos cadastrados recentemente
+    apartamentos = Apartamento.objects.order_by('-data_criacao').filter(apartamento_publicado = True)
        
     dados = {
         'apartamentos': apartamentos

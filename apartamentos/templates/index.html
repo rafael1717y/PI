@@ -39,8 +39,12 @@
                 <!-- Single Best Receipe Area -->
                 <div class="col-12 col-sm-6 col-lg-4">
                     <div class="single-best-receipe-area mb-30">
-                        <img src="{% static 'img/bg-img/imagem1.png' %}" alt="">
-                        <div class="receipe-content">
+                        {% if apartamento.foto_apartamento == '' %}
+                            <img src="{% static 'img/bg-img/imagem1.png' %}" alt="">
+                        {% else %}
+                            <img src="{{ apartamento.foto_apartamento.url }}" alt="">
+                        {% endif %}
+                            <div class="receipe-content">
                             <a href="{% url 'apartamento' apartamento.id %}">
                                 <h5>{{ apartamento.nome_apartamento }}</h5>
                             </a>
